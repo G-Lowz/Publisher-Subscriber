@@ -42,26 +42,9 @@ namespace CreateBlocks
             for(int i = 0; i < NUMOFIMODS; i++)
             {
                 _IModules[i].ButtonIsClicked += new EventHandler(ProgramProper);
-                //_IModules[i].HexIsUpdated += new EventHandler(MessageBoxShow);
             }
-            /*
-            for (int _i = 0; _i < 8; _i++)
-            {
-                _inputStatus[_i] = false;
-                _outputStatus[_i] = false;
-            }  */
         }
-        private void MessageBoxShow(object _o, EventArgs _e)
-        {
-            Subscribe = (string[])_o;
-            string _ss = "";
-            foreach(string _s in Subscribe)
-            {
-                _ss += _s;
-            }
-            MessageBox.Show(_ss, "Output");
-        }
-        //************************************ PROGRAM FOR THE MODULES START *********************************************//
+        //************************************ PROGRAM FOR THE MODULES - START *********************************************//
         public void ProgramProper(object sender, EventArgs e)
         {
             
@@ -101,7 +84,7 @@ namespace CreateBlocks
             {
                 _OModules[0].SetInputOff(3);
             }
-            // _inputStatus 
+            // Publishing
             PublishInputStatus();
             PublishOutputStatus();
         }
@@ -141,7 +124,7 @@ namespace CreateBlocks
             //MessageBox.Show(_s, "Outputs :");
         }
 
-            //************************************ PROGRAM FOR THE MODULES END *********************************************//
+            //************************************ PROGRAM FOR THE MODULES - END *********************************************//
             private void InsertModules(int _i, int _o)
         {
             for (int i = 0; i < _i; i++)
